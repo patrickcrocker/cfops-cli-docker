@@ -3,6 +3,7 @@ jobs:
 - name: build
   plan:
   - get: cfops-cli
+    trigger: true
   - put: cfops-cli-image
     params: {build: cfops-cli}
 
@@ -12,6 +13,8 @@ resources:
   source:
     uri: {{git-uri}}
     branch: {{git-branch}}
+    paths:
+      - Dockerfile
 
 - name: cfops-cli-image
   type: docker-image
