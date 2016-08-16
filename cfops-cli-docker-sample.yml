@@ -1,0 +1,9 @@
+# Replace these with your own values:
+#   <username>
+#   <password>
+---
+git-uri: https://github.com/<username>/docker-cfops-cli.git
+git-branch: master
+docker-repository: <username>/cfops-cli
+docker-username: <username>
+docker-password: <password>

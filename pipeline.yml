@@ -1,0 +1,21 @@
+---
+jobs:
+- name: build
+  plan:
+  - get: cfops-cli
+  - put: cfops-cli-image
+    params: {build: cfops-cli}
+
+resources:
+- name: cfops-cli
+  type: git
+  source:
+    uri: {{git-uri}}
+    branch: {{git-branch}}
+
+- name: cfops-cli-image
+  type: docker-image
+  source:
+    repository: {{docker-repository}}
+    username: {{docker-username}}
+    password: {{docker-password}}
